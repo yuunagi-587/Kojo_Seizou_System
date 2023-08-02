@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>B-FORME Java プロジェクト : 部署情報</title>
+	<link rel="stylesheet" th:href="@{/css/bfmk07View.css}">
+</head>
+
+<body>
+	<!-- 部署情報画面 -->
+	<main>
+		<form method="post" th:action="@{/b-forme_Kojo/pc/207}" th:object="${belongingForm}">
+			<input type="hidden" name="nowPage" th:value="${nowPage}">
+			<input type="hidden" name="totalPage" th:value="${totalPage}">
+
+			<div class="inputRow">
+				<div class="nameField">
+					<label for="affilicateId">所属ID</label>
+				</div>
+				<div class="inputField">
+					<input class="inputGroup" id="affilicateId" name="affilicateId"
+						type="text" th:value="*{affilicateId}" th:disabled="${disabledFlg}">
+				</div>
+			</div>
+
+			<div class="inputRow">
+				<div class="nameField">
+					<label for="affilicateName">部署名</label>
+				</div>
+				<div class="inputField">
+					<input class="inputGroup" id="affilicateName" name="affilicateName"
+						type="text" th:value="*{affilicateName}" th:disabled="${disabledFlg}">
+				</div>
+			</div>
+
+			<div class="inputRow">
+				<div class="nameField">
+					<label for="affilicateNameR">部署名略称</label>
+				</div>
+				<div class="inputField">
+					<input class="inputGroup" id="affilicateNameR" name="affilicateNameR"
+						type="text" th:value="*{affilicateNameR}" th:disabled="${disabledFlg}">
+				</div>
+			</div>
+
+			<div class="inputRow">
+				<div class="nameField">
+					<label for="applyFinDate">適用日</label>
+				</div>
+				<div class="inputField">
+					<input id="applyStrtDate" name="applyStrtDate" type="date"
+						th:value="*{applyStrtDate}" th:disabled="${disabledFlg}">
+					 &nbsp;～&nbsp;
+					<input id="applyFinDate" name="applyFinDate" type="date"
+						th:value="*{applyFinDate}" th:disabled="${disabledFlg}">
+				</div>
+			</div>
+
+			<div class="processField">
+				<div class="messageField">
+					<span class="drawMessage" th:text="${processMessage}"
+						th:style="|color: ${colorCode}|"></span>
+				</div>
+				<div>
+					<button type="submit" class="processBtn" name="back">戻る</button>
+					<button type="submit" class="processBtn"
+						name="clear" th:disabled="${disabledFlg}">クリア</button>
+					<button type="submit" class="processBtn"
+						name="register" th:disabled="${disabledFlg}">登録</button>
+				</div>
+			</div>
+
+			<div class="listField">
+				<button type="submit" class="deleteBtn"
+					name="delete" th:disabled="${disabledFlg}">削除</button>
+
+				<button type="submit" class="moveArrow" name="firstPage">←</button>
+				<button type="submit" class="moveArrow" name="backPage">⇤</button>
+				<span class="pageNum">[[${nowPage}]]/[[${totalPage}]]</span>
+				<button type="submit" class="moveArrow" name="nextPage">⇥</button>
+				<button type="submit" class="moveArrow" name="lastPage">→</button>
+				<span class="totalDepartment">件数：[[${totalBelonging}]]</span>
+
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th>所属ID</th>
+							<th>所属名</th>
+							<th>所属名略称</th>
+							<th>所属人数</th>
+							<th>適用開始日</th>
+							<th>適用終了日</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="belonging : ${belongingList}">
+							<td><input type="checkbox" name="affilicateIdList"
+									th:value="${belonging.affilicateId}"></td>
+							<td th:text="${belonging.affilicateId}"></td>
+							<td th:text="${belonging.affilicateName}"></td>
+							<td th:text="${belonging.affilicateNameR}"></td>
+							<td th:text="${belonging.affilicateCount}"></td>
+							<td th:text="${belonging.applyStrtDateStr}"></td>
+							<td th:text="${belonging.applyFinDateStr}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+	</main>
+</body>
+
+</html>
