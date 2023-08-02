@@ -59,15 +59,15 @@ public class Bfmk07Controller {
 
 			// 以下の値をモデルへ格納
 			model.addAttribute("belongingList", dto.getBelongingList());	// 部署情報リスト
-			model.addAttribute("nowPage", dto.getNowPage());				// 現在のページ
-			model.addAttribute("totalPage", dto.getTotalPage());			// ページ総数
+			model.addAttribute("nowPage", dto.getNowPage());		// 現在のページ
+			model.addAttribute("totalPage", dto.getTotalPage());		// ページ総数
 			model.addAttribute("totalBelonging", dto.getTotalBelonging());	// 部署総数
 		} else {
 			// 権限が無い場合、以下の値をモデルへ格納
-			model.addAttribute("belongingList", null);						// 部署情報リスト
-			model.addAttribute("nowPage", "0");								// 現在のページ
-			model.addAttribute("totalPage", "0");							// ページ総数
-			model.addAttribute("totalBelonging", "0");						// 部署総数
+			model.addAttribute("belongingList", null);			// 部署情報リスト
+			model.addAttribute("nowPage", "0");				// 現在のページ
+			model.addAttribute("totalPage", "0");				// ページ総数
+			model.addAttribute("totalBelonging", "0");			// 部署総数
 		}
 
 		// 操作権限の確認
@@ -84,11 +84,11 @@ public class Bfmk07Controller {
 		// 初期化の確認
 		if(formInitializeFlg) {
 			// フォームを初期化する
-			form.setAffilicateId("");					// 所属ID
-			form.setAffilicateName("");					// 部署名
-			form.setAffilicateNameR("");				// 部署名略称
+			form.setAffilicateId("");			// 所属ID
+			form.setAffilicateName("");			// 部署名
+			form.setAffilicateNameR("");			// 部署名略称
 			form.setApplyStrtDate(sdf.format(date));	// 適用日(FROM)
-			form.setApplyFinDate("");					// 適用日(TO)
+			form.setApplyFinDate("");			// 適用日(TO)
 		}
 
 		// フォームをモデルへ格納
@@ -231,7 +231,7 @@ public class Bfmk07Controller {
 
 		// 参照権限の確認
 		if(userInfo.isWatchAuthFlg()) {
-			int nowPageInt = Integer.parseInt(nowPage);			// 現在のページ
+			int nowPageInt = Integer.parseInt(nowPage);		// 現在のページ
 			int totalPageInt = Integer.parseInt(totalPage);		// ページ総数
 			BelongingShowDto dto = new BelongingShowDto();
 
@@ -244,15 +244,15 @@ public class Bfmk07Controller {
 
 			// 以下の値をモデルへ格納
 			model.addAttribute("belongingList", dto.getBelongingList());	// 部署情報リスト
-			model.addAttribute("nowPage", dto.getNowPage());				// 現在のページ
-			model.addAttribute("totalPage", dto.getTotalPage());			// ページ総数
+			model.addAttribute("nowPage", dto.getNowPage());		// 現在のページ
+			model.addAttribute("totalPage", dto.getTotalPage());		// ページ総数
 			model.addAttribute("totalBelonging", dto.getTotalBelonging());	// 部署総数
 		} else {
 			// 権限が無い場合、以下の値をモデルへ格納
-			model.addAttribute("belongingList", null);						// 部署情報リスト
-			model.addAttribute("nowPage", "0");								// 現在のページ
-			model.addAttribute("totalPage", "0");							// ページ総数
-			model.addAttribute("totalBelonging", "0");						// 部署総数
+			model.addAttribute("belongingList", null);			// 部署情報リスト
+			model.addAttribute("nowPage", "0");				// 現在のページ
+			model.addAttribute("totalPage", "0");				// ページ総数
+			model.addAttribute("totalBelonging", "0");			// 部署総数
 		}
 
 		// 操作権限の確認
@@ -289,20 +289,20 @@ public class Bfmk07Controller {
 			if(nowPageInt - 1 <= 1) {
 				dto = service.pagination(nowPageInt, "defaultPage");	// 最初のページを表示
 			} else {
-				dto = service.pagination(nowPageInt, "backPage");		// 前のページを表示
+				dto = service.pagination(nowPageInt, "backPage");	// 前のページを表示
 			}
 
 			// 以下の値をモデルへ格納
 			model.addAttribute("belongingList", dto.getBelongingList());	// 部署情報リスト
-			model.addAttribute("nowPage", dto.getNowPage());				// 現在のページ
-			model.addAttribute("totalPage", dto.getTotalPage());			// ページ総数
+			model.addAttribute("nowPage", dto.getNowPage());		// 現在のページ
+			model.addAttribute("totalPage", dto.getTotalPage());		// ページ総数
 			model.addAttribute("totalBelonging", dto.getTotalBelonging());	// 部署総数
 		} else {
 			// 権限が無い場合、以下の値をモデルへ格納
-			model.addAttribute("belongingList", null);						// 部署情報リスト
-			model.addAttribute("nowPage", "0");								// 現在のページ
-			model.addAttribute("totalPage", "0");							// ページ総数
-			model.addAttribute("totalBelonging", "0");						// 部署総数
+			model.addAttribute("belongingList", null);			// 部署情報リスト
+			model.addAttribute("nowPage", "0");				// 現在のページ
+			model.addAttribute("totalPage", "0");				// ページ総数
+			model.addAttribute("totalBelonging", "0");			// 部署総数
 		}
 
 		// 操作権限の確認
@@ -339,15 +339,15 @@ public class Bfmk07Controller {
 
 			// 以下の値をモデルへ格納
 			model.addAttribute("belongingList", dto.getBelongingList());	// 部署情報リスト
-			model.addAttribute("nowPage", dto.getNowPage());				// 現在のページ
-			model.addAttribute("totalPage", dto.getTotalPage());			// ページ総数
+			model.addAttribute("nowPage", dto.getNowPage());		// 現在のページ
+			model.addAttribute("totalPage", dto.getTotalPage());		// ページ総数
 			model.addAttribute("totalBelonging", dto.getTotalBelonging());	// 部署総数
 		} else {
 			// 権限が無い場合、以下の値をモデルへ格納
-			model.addAttribute("belongingList", null);						// 部署情報リスト
-			model.addAttribute("nowPage", "0");								// 現在のページ
-			model.addAttribute("totalPage", "0");							// ページ総数
-			model.addAttribute("totalBelonging", "0");						// 部署総数
+			model.addAttribute("belongingList", null);			// 部署情報リスト
+			model.addAttribute("nowPage", "0");				// 現在のページ
+			model.addAttribute("totalPage", "0");				// ページ総数
+			model.addAttribute("totalBelonging", "0");			// 部署総数
 		}
 
 		// 操作権限の確認
@@ -384,15 +384,15 @@ public class Bfmk07Controller {
 
 			// 以下の値をモデルへ格納
 			model.addAttribute("belongingList", dto.getBelongingList());	// 部署情報リスト
-			model.addAttribute("nowPage", dto.getNowPage());				// 現在のページ
-			model.addAttribute("totalPage", dto.getTotalPage());			// ページ総数
+			model.addAttribute("nowPage", dto.getNowPage());		// 現在のページ
+			model.addAttribute("totalPage", dto.getTotalPage());		// ページ総数
 			model.addAttribute("totalBelonging", dto.getTotalBelonging());	// 部署総数
 		} else {
 			// 権限が無い場合、以下の値をモデルへ格納
-			model.addAttribute("belongingList", null);						// 部署情報リスト
-			model.addAttribute("nowPage", "0");								// 現在のページ
-			model.addAttribute("totalPage", "0");							// ページ総数
-			model.addAttribute("totalBelonging", "0");						// 部署総数
+			model.addAttribute("belongingList", null);			// 部署情報リスト
+			model.addAttribute("nowPage", "0");				// 現在のページ
+			model.addAttribute("totalPage", "0");				// ページ総数
+			model.addAttribute("totalBelonging", "0");			// 部署総数
 		}
 
 		// 操作権限の確認
