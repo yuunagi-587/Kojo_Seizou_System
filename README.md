@@ -9,4 +9,18 @@
 データベース：MySQL
 
 ## キャプチャ
-![image](キャプチャ/)
+#### ・操作権限があるユーザー 
+  
+<img src="https://github.com/yuunagi-587/Kojo_Seizou_System/blob/master/キャプチャ/操作権限があるユーザー.png" width="95%">
+
+#### ・操作権限がないユーザー  
+  
+<img src="https://github.com/yuunagi-587/Kojo_Seizou_System/blob/master/キャプチャ/操作権限がないユーザー.png" width="95%">
+
+#### ・登録成功
+
+<img src="https://github.com/yuunagi-587/Kojo_Seizou_System/blob/master/キャプチャ/登録成功.png" width="95%">
+
+#### ・登録失敗
+
+<img src="https://github.com/yuunagi-587/Kojo_Seizou_System/blob/master/キャプチャ/登録失敗.png" width="95%">
